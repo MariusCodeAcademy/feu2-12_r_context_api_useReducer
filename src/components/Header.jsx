@@ -1,7 +1,15 @@
+import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import AuthContext from './../store/AuthContext';
 
 function Header(props) {
+  // gauti context
+  const ctx = useContext(AuthContext);
+  console.log('ctx ===', ctx);
+  // 1 nustatyti isUserLoggedIn reiksme is ctx
   const isUserLoggedIn = true;
+
+  // 2 nustatyti userEmail reiksme is ctx
   const userEmail = '';
 
   return (

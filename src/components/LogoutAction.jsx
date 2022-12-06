@@ -9,9 +9,9 @@ function LogoutAction(props) {
 
   const logoutTrigger = () => {
     // trigger
-    ctx.sayHi();
+    ctx.logout();
   };
 
-  return <button onClick={logoutTrigger}>Logout {ctx.name}</button>;
+  return <button onClick={logoutTrigger}>Logout </button>;
 }
 export default LogoutAction;

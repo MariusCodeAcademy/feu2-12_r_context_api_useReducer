@@ -34,10 +34,9 @@ function App() {
   };
 
   const contextValue = {
-    name: 'Mike',
-    sayHi: () => {
-      console.log('hi from mike');
-    },
+    userEmail: userEmail,
+    isUserLoggedIn: isUserLoggedIn,
+    logout: handleLogout,
   };
 
   return (
