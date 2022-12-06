@@ -5,9 +5,13 @@ function NotAuthorisedPage(props) {
     <div>
       <h1>For logged in user only!</h1>
 
-      <p>
+      {/* <p>
         Please <Link to='/login'>Login</Link>
-      </p>
+      </p> */}
+      {/* ideti Login form */}
+      {/* padaryti kad veiktu su contextu */}
+      <button>Show Form</button>
+      {/* paspaudus sita mygtuka vietoje jo atsiranda forma */}
     </div>
   );
 }

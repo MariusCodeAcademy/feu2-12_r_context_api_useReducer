@@ -12,10 +12,11 @@ import { sendData } from './helper';
 function App() {
   const valueInToken = localStorage.getItem('token123');
   const history = useHistory();
+  // 2 jei yra email localstorage tai nustatom ji, jei ne tai ''
   const [userEmail, setUserEmail] = useState('');
-  // 1. sukurti state tokenValue
+  //  sukurti state tokenValue
   const [tokeValue, setTokeValue] = useState(valueInToken || '');
-  // 3. nustatyti numatytaje verte kaip '' arba reiksme is localstorage
+  //  nustatyti numatytaje verte kaip '' arba reiksme is localstorage
   const isUserLoggedIn = !!tokeValue;
 
   const handleLogin = async (newLoginObj) => {
@@ -30,7 +31,7 @@ function App() {
       console.log('login success');
       // redirect
       setUserEmail(newLoginObj.email);
-      // 2. issaugoti token state ir localstorage
+      // 1. issaugoti email i localstorage
       setTokeValue(loginResultObj.token);
       localStorage.setItem('token123', loginResultObj.token);
       history.push('/user-page');
