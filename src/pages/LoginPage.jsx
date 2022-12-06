@@ -4,6 +4,16 @@ function LoginPage(props) {
   const handleLogin = (newLoginObj) => {
     console.log('handleLogin in LoginPage', newLoginObj);
     // if login success we redirect to userOnly page
+    // imituojam teisinga email
+    const validEmail = 'james@band.com';
+    if (newLoginObj.email === validEmail) {
+      // login success
+      console.log('login success');
+      // redirect
+    } else {
+      // login fails
+      console.log('login fails');
+    }
   };
 
   return (
