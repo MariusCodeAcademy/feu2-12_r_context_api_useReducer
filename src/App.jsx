@@ -34,7 +34,11 @@ function App() {
 
   return (
     <div className='App container'>
-      <Header userEmail={userEmail} isUserLoggedIn={isUserLoggedIn} />
+      <Header
+        onLogout={handleLogout}
+        userEmail={userEmail}
+        isUserLoggedIn={isUserLoggedIn}
+      />
       <Switch>
         <Route path={'/user-page'}>
           <UserOnlyPage onLogout={handleLogout} />
