@@ -10,15 +10,28 @@ function Header(props) {
         <NavLink className='nav-link' to='/' exact>
           Home
         </NavLink>
-        <NavLink className='nav-link' to='/user-page'>
-          Users Page
-        </NavLink>
-        <NavLink className='nav-link' to='/login'>
-          Login
-        </NavLink>
-        <Link className='nav-link' to={'/logout'}>
-          Logout
-        </Link>
+
+        {isUserLoggedIn && (
+          <NavLink className='nav-link' to='/user-page'>
+            Users Page
+          </NavLink>
+        )}
+        {!isUserLoggedIn && (
+          <NavLink className='nav-link' to='/login'>
+            Login
+          </NavLink>
+        )}
+        {isUserLoggedIn && (
+          <p style={{ marginBottom: 0 }} className='nav-link'>
+            {userEmail}
+          </p>
+        )}
+        {isUserLoggedIn && (
+          <Link className='nav-link' to={'/logout'}>
+            Logout
+          </Link>
+        )}
+
         {/* jei useris prisilogines, tai rodom louguot */}
         {/* jei useris prisilogines, tai userio email */}
         {/* jei neprisilogines login */}
