@@ -1,7 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
 
 function Header(props) {
-  const isUserLoggedIn = true;
+  const isUserLoggedIn = false;
   const userEmail = 'jane@doe.com';
 
   return (
