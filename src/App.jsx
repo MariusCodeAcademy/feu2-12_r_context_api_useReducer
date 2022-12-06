@@ -7,17 +7,21 @@ import Header from './components/Header';
 import { useState } from 'react';
 import AuthContext from './store/AuthContext';
 import NotAuthorisedPage from './pages/NotAuthorisedPage';
+import { sendData } from './helper';
 
 function App() {
   const history = useHistory();
   const [userEmail, setUserEmail] = useState('');
   const isUserLoggedIn = !!userEmail;
-  const handleLogin = (newLoginObj) => {
+
+  const handleLogin = async (newLoginObj) => {
     // console.log('handleLogin in LoginPage', newLoginObj);
     // if login success we redirect to userOnly page
     // imituojam teisinga email
-    const validEmail = 'james@band.com';
-    if (newLoginObj.email === validEmail) {
+
+    const loginResultObj = await sendData(newLoginObj);
+    console.log('loginResultObj ===', loginResultObj);
+    if (loginResultObj.token) {
       // login success
       console.log('login success');
       // redirect
@@ -25,7 +29,7 @@ function App() {
       history.push('/user-page');
     } else {
       // login fails
-      console.log('login fails');
+      console.log('login fails', loginResultObj.error);
     }
   };
 
