@@ -3,10 +3,12 @@ import './App.css';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import UserOnlyPage from './pages/UserOnlyPage';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className='App container'>
+      <Header />
       <Switch>
         <Route path={'/user-page'}>
           <UserOnlyPage />
