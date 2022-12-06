@@ -4,7 +4,7 @@ import LoginForm from '../components/LoginForm';
 function LoginPage(props) {
   const history = useHistory();
   const handleLogin = (newLoginObj) => {
-    console.log('handleLogin in LoginPage', newLoginObj);
+    // console.log('handleLogin in LoginPage', newLoginObj);
     // if login success we redirect to userOnly page
     // imituojam teisinga email
     const validEmail = 'james@band.com';

@@ -10,12 +10,12 @@ function LoginForm(props) {
   // sustabdyti forma nuo puslapio perkrovimo prisijungiant prie jos pateikimo evento
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log('react control the form');
+    // console.log('react control the form');
     const loginObj = {
       email: emailValue,
       password: passwordValue,
     };
-    console.log('loginObj ===', loginObj);
+    // console.log('loginObj ===', loginObj);
     props.onLogin(loginObj);
   };
   // pateikiant forma isspausditi login objekta
