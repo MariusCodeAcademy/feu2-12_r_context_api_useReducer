@@ -1,8 +1,11 @@
 //
 function LoginForm(props) {
+  // isitraukti forma i LoginPage
   // sukurti state emailValue ir passwordValue
   // susieti juos su inputais su two way binding, (onChange ir value)
   // sustabdyti forma nuo puslapio perkrovimo prisijungiant prie jos pateikimo evento
+  // pateikiant forma isspausditi login objekta
+  // pateikiant forma gauti login objekta LoginPage ir isspausdinti konsoleje
 
   return (
     <div>
