@@ -33,8 +33,15 @@ function App() {
     history.push('/login');
   };
 
+  const contextValue = {
+    name: 'Mike',
+    sayHi: () => {
+      console.log('hi from mike');
+    },
+  };
+
   return (
-    <AuthContext.Provider value={555}>
+    <AuthContext.Provider value={contextValue}>
       <div className='App container'>
         <Header />
         <Switch>

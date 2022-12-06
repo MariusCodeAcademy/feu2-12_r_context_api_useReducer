@@ -3,14 +3,15 @@ import AuthContext from '../store/AuthContext';
 
 function LogoutAction(props) {
   // get value from context and console log it
-  const val = useContext(AuthContext);
+  const ctx = useContext(AuthContext);
 
-  console.log('val ===', val);
+  console.log('val ===', ctx);
 
   const logoutTrigger = () => {
     // trigger
+    ctx.sayHi();
   };
 
-  return <button onClick={logoutTrigger}>Logout {val}</button>;
+  return <button onClick={logoutTrigger}>Logout {ctx.name}</button>;
 }
 export default LogoutAction;
