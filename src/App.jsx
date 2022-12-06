@@ -27,12 +27,17 @@ function App() {
     }
   };
 
+  const handleLogout = () => {
+    setUserEmail('');
+    history.push('/login');
+  };
+
   return (
     <div className='App container'>
       <Header userEmail={userEmail} isUserLoggedIn={isUserLoggedIn} />
       <Switch>
         <Route path={'/user-page'}>
-          <UserOnlyPage />
+          <UserOnlyPage onLogout={handleLogout} />
         </Route>
         <Route path={'/login'}>
           <LoginPage onLogin={handleLogin} />
