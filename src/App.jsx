@@ -6,6 +6,7 @@ import UserOnlyPage from './pages/UserOnlyPage';
 import Header from './components/Header';
 import { useState } from 'react';
 import AuthContext from './store/AuthContext';
+import NotAuthorisedPage from './pages/NotAuthorisedPage';
 
 function App() {
   const history = useHistory();
@@ -47,7 +48,8 @@ function App() {
         <Header />
         <Switch>
           <Route path={'/user-page'}>
-            <UserOnlyPage />
+            {/* protecting the user route */}
+            {isUserLoggedIn ? <UserOnlyPage /> : <NotAuthorisedPage />}
           </Route>
           <Route path={'/login'}>
             <LoginPage />
