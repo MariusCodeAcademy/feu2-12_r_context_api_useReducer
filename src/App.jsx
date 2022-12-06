@@ -36,17 +36,13 @@ function App() {
   return (
     <AuthContext.Provider value={555}>
       <div className='App container'>
-        <Header
-          onLogout={handleLogout}
-          userEmail={userEmail}
-          isUserLoggedIn={isUserLoggedIn}
-        />
+        <Header />
         <Switch>
           <Route path={'/user-page'}>
-            <UserOnlyPage onLogout={handleLogout} />
+            <UserOnlyPage />
           </Route>
           <Route path={'/login'}>
-            <LoginPage onLogin={handleLogin} />
+            <LoginPage />
           </Route>
           <Route path={'/'} exact>
             <HomePage />

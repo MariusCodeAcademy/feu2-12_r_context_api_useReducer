@@ -10,3 +10,4 @@
 1. create context file in store directory
 2. `const AuthContext = createContext({})`
 3. Wrap our app with Context Provider and add value prop
+4. to get value from context useContext() hook

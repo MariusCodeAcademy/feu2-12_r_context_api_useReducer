@@ -6,7 +6,7 @@ function UserOnlyPage(props) {
       <h1>UserOnlyPage</h1>
       <p>Welcome James</p>
 
-      <LogoutAction onLogout={props.onLogout} />
+      <LogoutAction />
     </div>
   );
 }

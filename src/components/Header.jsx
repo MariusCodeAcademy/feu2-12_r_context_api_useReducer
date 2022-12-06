@@ -1,8 +1,8 @@
 import { Link, NavLink } from 'react-router-dom';
 
 function Header(props) {
-  const isUserLoggedIn = props.isUserLoggedIn;
-  const userEmail = props.userEmail;
+  const isUserLoggedIn = false;
+  const userEmail = '';
 
   return (
     <header className='main-header'>
@@ -29,7 +29,7 @@ function Header(props) {
         {isUserLoggedIn && (
           <Link className='nav-link' to={'/login'}>
             {/* headeryje paspaudus lougout span, onClick atsiloginam  */}
-            <span onClick={props.onLogout}>Logout</span>
+            <span>Logout</span>
           </Link>
         )}
 

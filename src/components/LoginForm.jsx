@@ -16,7 +16,6 @@ function LoginForm(props) {
       password: passwordValue,
     };
     // console.log('loginObj ===', loginObj);
-    props.onLogin(loginObj);
   };
   // pateikiant forma isspausditi login objekta
   // pateikiant forma gauti login objekta LoginPage ir isspausdinti konsoleje
