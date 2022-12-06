@@ -27,8 +27,9 @@ function Header(props) {
           </p>
         )}
         {isUserLoggedIn && (
-          <Link className='nav-link' to={'/logout'}>
-            Logout
+          <Link className='nav-link' to={'/login'}>
+            {/* headeryje paspaudus lougout span, onClick atsiloginam  */}
+            <span>Logout</span>
           </Link>
         )}
 
