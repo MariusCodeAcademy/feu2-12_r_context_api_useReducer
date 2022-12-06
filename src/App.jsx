@@ -33,6 +33,7 @@ function App() {
     history.push('/login');
   };
 
+  // 3 prideti i contextValue  handleLogin
   const contextValue = {
     userEmail: userEmail,
     isUserLoggedIn: isUserLoggedIn,

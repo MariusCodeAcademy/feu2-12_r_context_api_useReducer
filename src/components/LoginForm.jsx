@@ -16,6 +16,8 @@ function LoginForm(props) {
       password: passwordValue,
     };
     // console.log('loginObj ===', loginObj);
+    // 4. LoginForm.jsx gauti ctx
+    // 5. iskviesti login funkcija, paduodant loginObj kaip argumenta
   };
   // pateikiant forma isspausditi login objekta
   // pateikiant forma gauti login objekta LoginPage ir isspausdinti konsoleje
