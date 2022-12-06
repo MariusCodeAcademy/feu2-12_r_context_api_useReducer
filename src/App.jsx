@@ -1,11 +1,15 @@
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useHistory } from 'react-router-dom';
 import './App.css';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import UserOnlyPage from './pages/UserOnlyPage';
 import Header from './components/Header';
+import { useState } from 'react';
 
 function App() {
+  const history = useHistory();
+  const [userEmail, setUserEmail] = useState('');
+  const isUserLoggedIn = !!userEmail;
   const handleLogin = (newLoginObj) => {
     // console.log('handleLogin in LoginPage', newLoginObj);
     // if login success we redirect to userOnly page
@@ -15,7 +19,8 @@ function App() {
       // login success
       console.log('login success');
       // redirect
-      // history.push('/user-page');
+      setUserEmail(newLoginObj.email);
+      history.push('/user-page');
     } else {
       // login fails
       console.log('login fails');
@@ -24,7 +29,7 @@ function App() {
 
   return (
     <div className='App container'>
-      <Header />
+      <Header userEmail={userEmail} isUserLoggedIn={isUserLoggedIn} />
       <Switch>
         <Route path={'/user-page'}>
           <UserOnlyPage />
