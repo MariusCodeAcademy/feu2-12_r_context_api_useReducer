@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import AuthContext from './../store/AuthContext';
 
 //
 function LoginForm(props) {
+  const ctx = useContext(AuthContext);
   // isitraukti forma i LoginPage
   // sukurti state emailValue ir passwordValue
   const [emailValue, setEmailValue] = useState('');
@@ -18,6 +20,7 @@ function LoginForm(props) {
     // console.log('loginObj ===', loginObj);
     // 4. LoginForm.jsx gauti ctx
     // 5. iskviesti login funkcija, paduodant loginObj kaip argumenta
+    ctx.login(loginObj);
   };
   // pateikiant forma isspausditi login objekta
   // pateikiant forma gauti login objekta LoginPage ir isspausdinti konsoleje

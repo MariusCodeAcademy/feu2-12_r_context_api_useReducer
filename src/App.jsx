@@ -38,6 +38,7 @@ function App() {
     userEmail: userEmail,
     isUserLoggedIn: isUserLoggedIn,
     logout: handleLogout,
+    login: handleLogin,
   };
 
   return (
