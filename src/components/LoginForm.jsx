@@ -1,7 +1,11 @@
+import { useState } from 'react';
+
 //
 function LoginForm(props) {
   // isitraukti forma i LoginPage
   // sukurti state emailValue ir passwordValue
+  const [emailValue, setEmailValue] = useState('');
+  const [passwordValue, setPasswordValue] = useState('');
   // susieti juos su inputais su two way binding, (onChange ir value)
   // sustabdyti forma nuo puslapio perkrovimo prisijungiant prie jos pateikimo evento
   // pateikiant forma isspausditi login objekta
@@ -10,15 +14,25 @@ function LoginForm(props) {
   return (
     <div>
       <h2>Login here</h2>
-      <form>
-        <input type='text' placeholder='email' />
-        <input type='password' placeholder='password' />
+      <form className='card'>
+        <input
+          onChange={(e) => setEmailValue(e.target.value)}
+          value={emailValue}
+          type='text'
+          placeholder='email'
+        />
+        <input
+          onChange={(e) => setPasswordValue(e.target.value)}
+          value={passwordValue}
+          type='password'
+          placeholder='password'
+        />
         <button type='submit'>Login</button>
       </form>
       <hr />
       <h3>Debug values</h3>
-      <p>Email: </p>
-      <p>Password: </p>
+      <p>Email: {emailValue}</p>
+      <p>Password: {passwordValue}</p>
     </div>
   );
 }
