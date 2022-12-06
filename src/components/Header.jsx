@@ -7,10 +7,10 @@ function Header(props) {
   const ctx = useContext(AuthContext);
   console.log('ctx ===', ctx);
   // 1 nustatyti isUserLoggedIn reiksme is ctx
-  const isUserLoggedIn = true;
+  const isUserLoggedIn = ctx.isUserLoggedIn;
 
   // 2 nustatyti userEmail reiksme is ctx
-  const userEmail = '';
+  const userEmail = ctx.userEmail;
 
   return (
     <header className='main-header'>
