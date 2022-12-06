@@ -8,13 +8,23 @@ function LoginForm(props) {
   const [passwordValue, setPasswordValue] = useState('');
   // susieti juos su inputais su two way binding, (onChange ir value)
   // sustabdyti forma nuo puslapio perkrovimo prisijungiant prie jos pateikimo evento
+  const submitHandler = (e) => {
+    e.preventDefault();
+    console.log('react control the form');
+    const loginObj = {
+      email: emailValue,
+      password: passwordValue,
+    };
+    console.log('loginObj ===', loginObj);
+    props.onLogin(loginObj);
+  };
   // pateikiant forma isspausditi login objekta
   // pateikiant forma gauti login objekta LoginPage ir isspausdinti konsoleje
 
   return (
     <div>
       <h2>Login here</h2>
-      <form className='card'>
+      <form onSubmit={submitHandler} className='card'>
         <input
           onChange={(e) => setEmailValue(e.target.value)}
           value={emailValue}
