@@ -5,6 +5,7 @@ import LoginPage from './pages/LoginPage';
 import UserOnlyPage from './pages/UserOnlyPage';
 import Header from './components/Header';
 import { useState } from 'react';
+import AuthContext from './store/AuthContext';
 
 function App() {
   const history = useHistory();
@@ -33,24 +34,26 @@ function App() {
   };
 
   return (
-    <div className='App container'>
-      <Header
-        onLogout={handleLogout}
-        userEmail={userEmail}
-        isUserLoggedIn={isUserLoggedIn}
-      />
-      <Switch>
-        <Route path={'/user-page'}>
-          <UserOnlyPage onLogout={handleLogout} />
-        </Route>
-        <Route path={'/login'}>
-          <LoginPage onLogin={handleLogin} />
-        </Route>
-        <Route path={'/'} exact>
-          <HomePage />
-        </Route>
-      </Switch>
-    </div>
+    <AuthContext.Provider value={555}>
+      <div className='App container'>
+        <Header
+          onLogout={handleLogout}
+          userEmail={userEmail}
+          isUserLoggedIn={isUserLoggedIn}
+        />
+        <Switch>
+          <Route path={'/user-page'}>
+            <UserOnlyPage onLogout={handleLogout} />
+          </Route>
+          <Route path={'/login'}>
+            <LoginPage onLogin={handleLogin} />
+          </Route>
+          <Route path={'/'} exact>
+            <HomePage />
+          </Route>
+        </Switch>
+      </div>
+    </AuthContext.Provider>
   );
 }
 
