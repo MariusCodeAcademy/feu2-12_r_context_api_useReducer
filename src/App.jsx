@@ -12,6 +12,8 @@ import { sendData } from './helper';
 function App() {
   const history = useHistory();
   const [userEmail, setUserEmail] = useState('');
+  // 1. sukurti state tokenValue
+  // 3. nustatyti numatytaje verte kaip '' arba reiksme is localstorage
   const isUserLoggedIn = !!userEmail;
 
   const handleLogin = async (newLoginObj) => {
@@ -26,6 +28,7 @@ function App() {
       console.log('login success');
       // redirect
       setUserEmail(newLoginObj.email);
+      // 2. issaugoti token state ir localstorage
       history.push('/user-page');
     } else {
       // login fails
@@ -38,7 +41,6 @@ function App() {
     history.push('/login');
   };
 
-  // 3 prideti i contextValue  handleLogin
   const contextValue = {
     userEmail: userEmail,
     isUserLoggedIn: isUserLoggedIn,
