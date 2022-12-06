@@ -10,11 +10,13 @@ import NotAuthorisedPage from './pages/NotAuthorisedPage';
 import { sendData } from './helper';
 
 function App() {
+  const valueInToken = localStorage.getItem('token123');
   const history = useHistory();
   const [userEmail, setUserEmail] = useState('');
   // 1. sukurti state tokenValue
+  const [tokeValue, setTokeValue] = useState(valueInToken || '');
   // 3. nustatyti numatytaje verte kaip '' arba reiksme is localstorage
-  const isUserLoggedIn = !!userEmail;
+  const isUserLoggedIn = !!tokeValue;
 
   const handleLogin = async (newLoginObj) => {
     // console.log('handleLogin in LoginPage', newLoginObj);
@@ -29,6 +31,8 @@ function App() {
       // redirect
       setUserEmail(newLoginObj.email);
       // 2. issaugoti token state ir localstorage
+      setTokeValue(loginResultObj.token);
+      localStorage.setItem('token123', loginResultObj.token);
       history.push('/user-page');
     } else {
       // login fails
@@ -38,6 +42,8 @@ function App() {
 
   const handleLogout = () => {
     setUserEmail('');
+    setTokeValue('');
+    localStorage.removeItem('token123');
     history.push('/login');
   };
 
