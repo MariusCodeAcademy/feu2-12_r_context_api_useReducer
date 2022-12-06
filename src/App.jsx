@@ -1,4 +1,4 @@
-import { Route, Switch, useHistory } from 'react-router-dom';
+import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 import './App.css';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
@@ -49,10 +49,21 @@ function App() {
         <Switch>
           <Route path={'/user-page'}>
             {/* protecting the user route */}
-            {isUserLoggedIn ? <UserOnlyPage /> : <NotAuthorisedPage />}
+            {isUserLoggedIn ? (
+              <UserOnlyPage />
+            ) : (
+              <Redirect to='/not-authorised' />
+            )}
+          </Route>
+
+          <Route path={'/not-authorised'}>
+            <NotAuthorisedPage />
           </Route>
           <Route path={'/login'}>
             <LoginPage />
+          </Route>
+          <Route path={'/home'}>
+            <Redirect to='/' />
           </Route>
           <Route path={'/'} exact>
             <HomePage />
