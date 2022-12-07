@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import LoginForm from '../components/LoginForm';
 
 function NotAuthorisedPage(props) {
   return (
@@ -12,6 +13,7 @@ function NotAuthorisedPage(props) {
       {/* padaryti kad veiktu su contextu */}
       <button>Show Form</button>
       {/* paspaudus sita mygtuka vietoje jo atsiranda forma */}
+      <LoginForm hideDebug />
     </div>
   );
 }

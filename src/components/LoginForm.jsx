@@ -43,10 +43,14 @@ function LoginForm(props) {
         />
         <button type='submit'>Login</button>
       </form>
-      <hr />
-      <h3>Debug values</h3>
-      <p>Email: {emailValue}</p>
-      <p>Password: {passwordValue}</p>
+      {!props.hideDebug && (
+        <>
+          <hr />
+          <h3>Debug values</h3>
+          <p>Email: {emailValue}</p>
+          <p>Password: {passwordValue}</p>
+        </>
+      )}
     </div>
   );
 }
